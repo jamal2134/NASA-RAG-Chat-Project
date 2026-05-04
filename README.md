@@ -143,7 +143,8 @@ By completing this project, students will learn to:
    **The Result of embedding_pipeline.py:**
    ```text
    In file chroma_embedding_text_only.log
-   ```   
+   ```
+   The link of [chroma_db_openai](https://drive.google.com/drive/folders/10QGodnfYNjU4H7ZUXi-gAx8P89iMNnqt?usp=sharing)
 
 ###  **Test Chat**:
 
