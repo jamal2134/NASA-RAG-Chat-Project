@@ -135,7 +135,7 @@ By completing this project, students will learn to:
 1. **Run the complete pipeline**:
    ```bash
    # Process documents
-   python embedding_pipeline.py --openai-key YOUR_KEY --data-path ./data
+   python embedding_pipeline.py --openai-key YOUR_KEY --data-path ./data_text
    
    # Launch chat interface
    streamlit run chat.py
