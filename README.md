@@ -168,9 +168,9 @@ By completing this project, students will learn to:
 
    **Faithfulness**: 22.2%
 
-   ![imgQ2](images/imgQ2.png)imgQ2
+   ![imgQ2](images/imgQ2.png)
 
-   ![imgE2](images/imgE2.png)imgE2
+   ![imgE2](images/imgE2.png)
 
 3. **Question:** Compare Apollo 11 and Apollo 13 missions.
 
@@ -206,7 +206,7 @@ By completing this project, students will learn to:
 
    **Faithfulness**: 100%
 
-   ![imgQ4](images/imgQ4.png)imgQ4
+   ![imgQ4](images/imgQ4.png)
 
-   ![imgE4](images/imgE4.png)imgE4
+   ![imgE4](images/imgE4.png)
 
