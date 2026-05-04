@@ -146,7 +146,7 @@ By completing this project, students will learn to:
    ```
 
 
-   The link of [chroma_db_openai](https://drive.google.com/drive/folders/10QGodnfYNjU4H7ZUXi-gAx8P89iMNnqt?usp=sharing)
+   The link of [chroma_db_openai](https://drive.google.com/drive/folders/1VEEnyz_CVrsCe9f7XycvnZsUpqg7J2c7?usp=sharing)
 
 ###  **Test Chat**:
 
