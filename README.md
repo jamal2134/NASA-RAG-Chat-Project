@@ -241,3 +241,16 @@ test_questions_with_references.json
 ```
 
 Result: in file `batch_evaluation_results_with_references.csv`
+
+
+## 📌 Note on Context Precision Evaluation
+
+In this project, the `reference_contexts` field required for certain RAGAS metrics (such as `NonLLMContextPrecisionWithReference`) was not used.
+
+The reason is that the project does not include a curated ground-truth dataset containing exact reference contexts extracted from the original documents.
+
+Instead, the retrieved documents generated dynamically by the `retrieve_documents()` function were used as a proxy for evaluation where needed.
+
+While this approach allows end-to-end evaluation of the RAG pipeline, it may not fully reflect true context precision, since the retrieved contexts are themselves part of the system output rather than a fixed ground-truth reference.
+
+For accurate context precision evaluation, a manually validated dataset with reference contexts would be required.
