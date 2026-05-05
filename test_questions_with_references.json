@@ -2,31 +2,49 @@
   {
     "category": "overview",
     "question": "What was Apollo 11?",
-    "reference": "Apollo 11 was NASA's first crewed mission to land humans on the Moon. The mission included Neil Armstrong, Buzz Aldrin, and Michael Collins."
+    "reference": "Apollo 11 was NASA's first crewed mission to land humans on the Moon. The mission included Neil Armstrong, Buzz Aldrin, and Michael Collins.",
+    "reference_contexts": [
+      "Apollo 11 was the first crewed mission to land on the Moon. The crew consisted of Neil Armstrong, Buzz Aldrin, and Michael Collins."
+    ]
   },
   {
     "category": "emergency",
     "question": "What problems did Apollo 13 encounter during the mission?",
-    "reference": "Apollo 13 encountered a major emergency after an oxygen tank explosion damaged the spacecraft, forcing NASA and the crew to abort the lunar landing and focus on returning safely to Earth."
+    "reference": "Apollo 13 encountered a major emergency after an oxygen tank explosion damaged the spacecraft, forcing NASA and the crew to abort the lunar landing and focus on returning safely to Earth.",
+    "reference_contexts": [
+      "Apollo 13 suffered an oxygen tank explosion, which caused loss of oxygen and power and required the crew to use the lunar module as a lifeboat."
+    ]
   },
   {
     "category": "disaster_analysis",
     "question": "What caused the Challenger disaster?",
-    "reference": "The Challenger disaster was caused by the failure of an O-ring seal in the right solid rocket booster, which allowed hot gases to escape and led to the destruction of the vehicle."
+    "reference": "The Challenger disaster was caused by the failure of an O-ring seal in the right solid rocket booster, which allowed hot gases to escape and led to the destruction of the vehicle.",
+    "reference_contexts": [
+      "The Challenger accident involved failure of the O-ring seals in the solid rocket booster, allowing combustion gases to escape."
+    ]
   },
   {
     "category": "crew",
     "question": "Who were the astronauts on Apollo 11?",
-    "reference": "The Apollo 11 crew consisted of Neil Armstrong, Buzz Aldrin, and Michael Collins."
+    "reference": "The Apollo 11 crew consisted of Neil Armstrong, Buzz Aldrin, and Michael Collins.",
+    "reference_contexts": [
+      "The Apollo 11 crew included Commander Neil Armstrong, Command Module Pilot Michael Collins, and Lunar Module Pilot Edwin Buzz Aldrin."
+    ]
   },
   {
     "category": "technical",
     "question": "What was the role of the Lunar Module during Apollo missions?",
-    "reference": "The Lunar Module was used to carry astronauts from lunar orbit to the Moon's surface and back to the Command Module."
+    "reference": "The Lunar Module was used to carry astronauts from lunar orbit to the Moon's surface and back to the Command Module.",
+    "reference_contexts": [
+      "The Lunar Module was designed to land astronauts on the lunar surface and return them to the Command Module in lunar orbit."
+    ]
   },
   {
     "category": "timeline",
     "question": "Describe the timeline of the Apollo 13 emergency.",
-    "reference": "Apollo 13 launched as a lunar landing mission, but after an oxygen tank explosion the landing was aborted. The crew powered down the command module, used the lunar module as a lifeboat, looped around the Moon, and returned safely to Earth."
+    "reference": "Apollo 13 launched as a lunar landing mission, but after an oxygen tank explosion the landing was aborted. The crew powered down the command module, used the lunar module as a lifeboat, looped around the Moon, and returned safely to Earth.",
+    "reference_contexts": [
+      "After the oxygen tank explosion, Apollo 13's mission was changed from lunar landing to crew survival and safe return to Earth."
+    ]
   }
 ]
