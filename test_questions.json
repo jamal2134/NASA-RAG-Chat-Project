@@ -22,6 +22,9 @@
   {
     "category": "overview",
     "question": "What was Apollo 11?",
-    "reference": "Apollo 11 was NASA's first crewed mission to land humans on the Moon. The crew included Neil Armstrong, Buzz Aldrin, and Michael Collins."
+    "reference": "Apollo 11 was NASA's first crewed mission to land humans on the Moon. The crew included Neil Armstrong, Buzz Aldrin, and Michael Collins.",
+  "reference_contexts": [
+    "Apollo 11 was the first crewed mission to land on the Moon. The crew consisted of Neil Armstrong, Buzz Aldrin, and Michael Collins."
+  ]
   }
 ]
