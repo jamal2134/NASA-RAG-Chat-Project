@@ -16,7 +16,11 @@ try:
 except ImportError:
     RAGAS_AVAILABLE = False
 
-def evaluate_response_quality(question: str, answer: str, contexts: List[str]) -> Dict[str, float]:
+def evaluate_response_quality(question: str, answer: str, contexts: List[str],
+                            reference: Optional[str] = None,
+                            enabled_metrics: Optional[List[str]] = None,
+                            reference_contexts: Optional[List[str]] = None
+                              ) -> Dict[str, float]:
     """Evaluate response quality using RAGAS metrics"""
     if not RAGAS_AVAILABLE:
         return {"error": "RAGAS not available"}
@@ -26,6 +30,15 @@ def evaluate_response_quality(question: str, answer: str, contexts: List[str]) -
     # TODO: Define an instance for each metric to evaluate
     # TODO: Evaluate the response using the metrics
     # TODO: Return the evaluation results
+
+    if enabled_metrics is None:
+        enabled_metrics = [
+            "response_relevancy",
+            "faithfulness",
+            "bleu",
+            "rouge",
+            "context_precision",
+        ]
 
     try:
         # Evaluator LLM
@@ -45,18 +58,60 @@ def evaluate_response_quality(question: str, answer: str, contexts: List[str]) -
             )
         )
 
+
+
         # Create single-turn sample
-        sample = SingleTurnSample(
-            user_input=question,
-            response=answer,
-            retrieved_contexts=contexts
-        )
+        sample_data = {
+            "user_input": question,
+            "response": answer,
+            "retrieved_contexts": contexts,
+        }
+
+        if reference:
+            sample_data["reference"] = reference
+
+        if reference_contexts:
+            sample_data["reference_contexts"] = reference_contexts
+
+        sample = SingleTurnSample(**sample_data)
 
         # Define metrics
-        metrics = [
-            ResponseRelevancy(llm=evaluator_llm, embeddings=evaluator_embeddings),
-            Faithfulness(llm=evaluator_llm)
-        ]
+        metrics = []
+
+        if "response_relevancy" in enabled_metrics:
+            metrics.append(
+                ResponseRelevancy(
+                    llm=evaluator_llm,
+                    embeddings=evaluator_embeddings,
+                )
+            )
+
+        if "faithfulness" in enabled_metrics:
+            metrics.append(
+                Faithfulness(
+                    llm=evaluator_llm,
+                )
+            )
+
+        # Reference-based metrics
+        if reference:
+            if "bleu" in enabled_metrics:
+                metrics.append(BleuScore())
+
+            if "rouge" in enabled_metrics:
+                metrics.append(RougeScore())
+
+            if "context_precision" in enabled_metrics  and reference_contexts:
+                metrics.append(NonLLMContextPrecisionWithReference())
+        else:
+            skipped = [
+                metric for metric in ["bleu", "rouge", "context_precision"]
+                if metric in enabled_metrics
+            ]
+            if skipped:
+                print(
+                    f"Skipping reference-based metrics {skipped} because no reference was provided."
+                )
 
         dataset = Dataset.from_list([sample.to_dict()])
 

@@ -242,7 +242,8 @@ def main():
                         evaluation_scores = evaluate_response_quality(
                             prompt, 
                             response, 
-                            contexts_list
+                            contexts_list,
+                            enabled_metrics=["response_relevancy", "faithfulness"]
                         )
                         st.session_state.last_evaluation = evaluation_scores
         

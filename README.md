@@ -213,3 +213,31 @@ By completing this project, students will learn to:
 
    ![imgE4](images/imgE4.png)
 
+
+## The code demonstrates clean context construction for the LLM
+
+Updated rag_client.py format_context() to deduplicate retrieved chunks before sending context to the LLM. The function now tracks each chunk using (source, chunk_index) when available, and falls back to normalized document text to avoid repeated snippets.
+
+## Batch Evaluation
+
+The project includes `test_questions.json` with mission-relevant evaluation questions and `batch_evaluate.py` to run end-to-end retrieval, generation, and RAGAS evaluation.
+
+Run:
+
+```bash
+python batch_evaluate.py
+```
+
+Result: in file `batch_evaluation_results.csv`
+
+
+
+## Batch Evaluation Dataset
+
+The project includes a reusable evaluation dataset file:
+
+```text
+test_questions_with_references.json
+```
+
+Result: in file `batch_evaluation_results_with_references.csv`

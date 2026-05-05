@@ -142,16 +142,37 @@ def format_context(documents: List[str], metadatas: List[Dict]) -> str:
     
     # TODO: Initialize list with header text for context section
     context_parts = ["Retrieved Context Documents:\n"]
+    seen_chunks = set()
 
     # TODO: Loop through paired documents and their metadata using enumeration
     for i, (doc, metadata) in enumerate(zip(documents, metadatas), start=1):
+        if not doc:
+            continue
+
+        # Normalize text to detect duplicates
+        normalized_doc = " ".join(doc.lower().split())
+
+        # Use source + chunk_index if available, otherwise use text
+        # TODO: Extract source information from metadata with fallback value
+        source = metadata.get("source", "unknown source")
+        chunk_index = metadata.get("chunk_index", None)
+
+        if chunk_index is not None:
+            dedup_key = (source, chunk_index)
+        else:
+            dedup_key = normalized_doc
+
+        # Skip duplicate chunks
+        if dedup_key in seen_chunks:
+            continue
+
+        seen_chunks.add(dedup_key)
         # TODO: Extract mission information from metadata with fallback value
         mission = metadata.get("mission", "unknown")
         # TODO: Clean up mission name formatting (replace underscores, capitalize)
         mission = mission.replace("_", " ").title()
 
-        # TODO: Extract source information from metadata with fallback value  
-        source = metadata.get("source", "unknown source")
+
         # TODO: Extract category information from metadata with fallback value
         category = metadata.get("category", "general")
         # TODO: Clean up category name formatting (replace underscores, capitalize)
@@ -159,7 +180,7 @@ def format_context(documents: List[str], metadatas: List[Dict]) -> str:
         
         # TODO: Create formatted source header with index number and extracted information
         source_header = (
-            f"\n--- Source {i} ---\n"
+            f"\n--- Source {len(seen_chunks)} ---\n"
             f"Mission: {mission}\n"
             f"Source: {source}\n"
             f"Category: {category}\n"

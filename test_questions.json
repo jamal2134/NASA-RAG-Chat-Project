@@ -1,0 +1,27 @@
+[
+  {
+    "category": "overview",
+    "question": "What was Apollo 11?"
+  },
+  {
+    "category": "emergency",
+    "question": "What problems did Apollo 13 encounter during the mission?"
+  },
+  {
+    "category": "disaster_analysis",
+    "question": "What caused the Challenger disaster?"
+  },
+  {
+    "category": "crew",
+    "question": "Who were the astronauts on Apollo 11?"
+  },
+  {
+    "category": "timeline",
+    "question": "Describe the timeline of the Apollo 13 emergency."
+  },
+  {
+    "category": "overview",
+    "question": "What was Apollo 11?",
+    "reference": "Apollo 11 was NASA's first crewed mission to land humans on the Moon. The crew included Neil Armstrong, Buzz Aldrin, and Michael Collins."
+  }
+]
